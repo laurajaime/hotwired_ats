@@ -2,7 +2,15 @@
   "name": "app",
   "private": true,
   "scripts": {
-    "build": "esbuild app/javascript/*.* --bundle --sourcemap --format=esm --outdir=app/assets/builds --public-path=/assets",
-    "build:css": "tailwindcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css --minify"
+    "build": "node esbuild.config.js",
+    "build:css": "tailwindcss --postcss -i ./app/assets/stylesheets/application.tailwind.css -o ./app/assets/builds/application.css"
+  },
+  "dependencies": {
+    "@tailwindcss/forms": "^0.5.7",
+    "postcss-import": "^16.0.0",
+    "yarn": "^1.22.21"
+  },
+  "devDependencies": {
+    "chokidar": "^3.6.0"
   }
 }

@@ -81,6 +81,9 @@ GEM
     bootsnap (1.18.3)
       msgpack (~> 1.2)
     builder (3.2.4)
+    cable_ready (5.0.0.pre8)
+      rails (>= 5.2)
+      thread-local (>= 1.1.0)
     concurrent-ruby (1.2.3)
     connection_pool (2.4.1)
     crass (1.0.6)
@@ -177,6 +180,10 @@ GEM
     rake (13.1.0)
     rdoc (6.6.2)
       psych (>= 4.0.0)
+    redis (5.1.0)
+      redis-client (>= 0.17.0)
+    redis-client (0.19.1)
+      connection_pool
     reline (0.4.2)
       io-console (~> 0.5)
     ruby2_keywords (0.0.5)
@@ -189,8 +196,15 @@ GEM
       sprockets (>= 3.0.0)
     stimulus-rails (1.3.3)
       railties (>= 6.0.0)
+    stimulus_reflex (3.5.0.pre8)
+      cable_ready (= 5.0.0.pre8)
+      nokogiri
+      rack
+      rails (>= 5.2)
+      redis
     stringio (3.1.0)
     thor (1.3.0)
+    thread-local (1.1.0)
     timeout (0.4.1)
     turbo-rails (2.0.2)
       actionpack (>= 6.0.0)
@@ -223,6 +237,7 @@ DEPENDENCIES
   rails (~> 7.1.3)
   sprockets-rails
   stimulus-rails
+  stimulus_reflex (= 3.5.0.pre8)
   turbo-rails
   tzinfo-data
   web-console
